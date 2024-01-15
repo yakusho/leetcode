@@ -20,11 +20,10 @@ impl Solution {
                 .or_insert(Player { wins: 0, losses: 0 })
                 .wins += 1;
 
-            let loser_entry = players_map
+            players_map
                 .entry(*loser)
-                .or_insert(Player { wins: 0, losses: 0 });
-
-            loser_entry.losses += 1;
+                .or_insert(Player { wins: 0, losses: 0 })
+                .losses += 1;
         });
 
 
